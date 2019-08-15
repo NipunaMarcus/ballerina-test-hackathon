@@ -16,7 +16,6 @@ service scatterGatherer on ls {
         body: "cities"
     }
     resource function getWeather(http:Caller caller, http:Request request, json cities) returns error? {
-        io:println("in service");
         dto:Cities | error citiesList = dto:Cities.constructFrom(cities);
         dto:City city1 = {};
         dto:City city2 = {};
